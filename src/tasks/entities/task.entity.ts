@@ -1,6 +1,6 @@
 import { TaskStatus } from "../constants/status";
-
-export interface TaskInterface {
+import { TaskInterface } from "../interfaces/task.interface";
+export class TaskEntity implements TaskInterface {
     id: number;
     description: string;
     status: TaskStatus;
