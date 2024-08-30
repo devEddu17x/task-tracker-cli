@@ -1,9 +1,6 @@
 import { Command, CommandRunner, Option } from "nest-commander";
 import { ListOptions } from "../interfaces/list-options.interface";
-import { StorageService } from "../services/storage.service";
-import { table } from "src/utils/table";
 import { ListService } from "../services/list.service";
-import { TaskEntity } from "../entities/task.entity";
 
 @Command({
     name: 'list',
