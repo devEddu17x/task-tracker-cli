@@ -14,29 +14,27 @@ export class AddService {
 
     async addDefaultStatus(params: string[]): Promise<boolean> {
         if (params.length === 0) return false;
-        const task: TaskEntity = {
-            id: 1,
-            description: params[0],
-            status: TaskStatus.ToDo,
-            createAt: new Date().toLocaleString(),
-            updatedAt: new Date().toLocaleString(),
-        }
+        const task: TaskEntity = await this.getTask(params, null);
         await this.storageService.save(task);
         return true;
     }
     async addCustomStatus(params: string[]): Promise<boolean> {
         if (params.length === 0) return false;
         const answer = await this.inquirerService.ask(TasksQuestions.Add, undefined);
+        const task: TaskEntity = await this.getTask(params, answer.status);
+        await this.storageService.save(task);
+        return true;
+    }
+
+    async getTask(params: string[], status: TaskStatus): Promise<TaskEntity> {
         const task: TaskEntity = {
-            id: 1,
+            id: null,
             description: params[0],
-            status: answer.status,
+            status: status || TaskStatus.ToDo,
             createAt: new Date().toLocaleString(),
             updatedAt: new Date().toLocaleString(),
         }
-
-        await this.storageService.save(task);
-        return true;
+        return task;
     }
 
 }               
