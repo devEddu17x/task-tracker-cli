@@ -34,7 +34,6 @@ export class AddService {
             updatedAt: new Date().toLocaleString(),
         }
         tasks.push(task);
-        table(tasks)
         return true;
     }
 
