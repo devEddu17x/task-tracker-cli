@@ -31,7 +31,7 @@ export class AddService {
         const task: TaskEntity = {
             id: 1,
             description: params[0],
-            status: getStatus[answer.toString()] || TaskStatus.ToDo,
+            status: answer.status,
             createAt: new Date().toLocaleString(),
             updatedAt: new Date().toLocaleString(),
         }
