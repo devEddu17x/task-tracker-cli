@@ -37,6 +37,10 @@ export class StorageService {
         await fs.writeFile(this.filePath, JSON.stringify(tasks, null, 2));
     }
 
+    async saveAllAfterUpdate(tasks: TaskEntity[]) {
+        await fs.writeFile(this.filePath, JSON.stringify(tasks, null, 2));
+    }
+
     async load(): Promise<TaskEntity[]> {
         try {
             const data = await fs.readFile(this.filePath, 'utf-8');

@@ -5,8 +5,11 @@ import { AddQuestionsSet } from './questions/add.questions';
 import { StorageService } from './services/storage.service';
 import { ListCommand } from './commands/list.command';
 import { ListService } from './services/list.service';
+import { UpdateService } from './services/update.service';
+import { UpdateCommand } from './commands/update.command';
+import { DeleteService } from './services/delete.service';
 
 @Module({
-  providers: [AddCommand, AddService, AddQuestionsSet, StorageService, ListCommand, ListService],
+  providers: [AddCommand, AddService, AddQuestionsSet, StorageService, ListCommand, ListService, UpdateService, UpdateCommand, DeleteService],
 })
 export class TasksModule { }  
