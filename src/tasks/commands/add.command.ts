@@ -1,4 +1,4 @@
-import { Command, CommandRunner, Option, InquirerService } from "nest-commander";
+import { Command, CommandRunner, Option } from "nest-commander";
 import { AddOptions } from "../interfaces/add-options.interface";
 import { AddService } from "../services/add.service";
 
