@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Basic cli to manage tasks, project from https://roadmap.sh/projects/task-tracker",
   "author": "devEddu17x",
-  "private": true,
+  "private": false,
   "license": "UNLICENSED",
   "main": "dist/main.js",
   "bin": {
