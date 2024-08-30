@@ -32,6 +32,7 @@ export class StorageService {
     async save(data: TaskEntity) {
         await fs.mkdir(path.dirname(this.filePath), { recursive: true });
         const tasks: TaskEntity[] = await this.load();
+        data.id = tasks.length + 1;
         tasks.push(data);
         await fs.writeFile(this.filePath, JSON.stringify(tasks, null, 2));
     }
