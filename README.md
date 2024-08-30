@@ -14,7 +14,7 @@
 To install `task-cli` globally via npm, run:
 
 ```bash
-npm install -g task-cli
+npm install -g @eddu/task-cli
 ```
 
 Once installed, you can run the CLI using the `task` command.
