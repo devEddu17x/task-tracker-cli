@@ -3,7 +3,6 @@ import { TaskStatus } from '../constants/status';
 import { InquirerService } from 'nest-commander';
 import { TaskEntity } from '../entities/task.entity';
 import { TasksQuestions } from '../constants/questions';
-import { getStatus } from '../constants/get-status';
 import { StorageService } from './storage.service';
 
 @Injectable()
