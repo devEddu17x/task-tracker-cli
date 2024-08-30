@@ -4,12 +4,14 @@ import { InquirerService } from 'nest-commander';
 import { TaskEntity } from '../entities/task.entity';
 import { TasksQuestions } from '../constants/questions';
 import { getStatus } from '../constants/get-status';
-import { table } from 'src/utils/table';
-const tasks: TaskEntity[] = [];
+import { StorageService } from './storage.service';
 
 @Injectable()
 export class AddService {
-    constructor(private readonly inquirerService: InquirerService) { }
+    constructor(
+        private readonly inquirerService: InquirerService,
+        private readonly storageService: StorageService,
+    ) { }
 
     async addDefaultStatus(params: string[]): Promise<boolean> {
         if (params.length === 0) return false;
@@ -20,7 +22,7 @@ export class AddService {
             createAt: new Date().toLocaleString(),
             updatedAt: new Date().toLocaleString(),
         }
-        tasks.push(task);
+        await this.storageService.save(task);
         return true;
     }
     async addCustomStatus(params: string[]): Promise<boolean> {
@@ -33,7 +35,8 @@ export class AddService {
             createAt: new Date().toLocaleString(),
             updatedAt: new Date().toLocaleString(),
         }
-        tasks.push(task);
+
+        await this.storageService.save(task);
         return true;
     }
 
