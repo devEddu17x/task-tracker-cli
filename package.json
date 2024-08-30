@@ -9,6 +9,11 @@
   "bin": {
     "task": "dist/main.js"
   },
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "start:cli": "ts-node src/main.ts",
     "build": "nest build",
