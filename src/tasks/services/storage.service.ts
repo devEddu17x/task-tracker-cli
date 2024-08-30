@@ -53,4 +53,14 @@ export class StorageService {
             console.log('Error during loading:\n', error);
         }
     }
+
+    async deleteAll(): Promise<boolean> {
+        try {
+            await fs.unlink(this.filePath);
+            return true;
+        } catch (error) {
+            console.log('Error during deleting:\n', error);
+            return false;
+        }
+    }
 }
