@@ -108,6 +108,13 @@ $ task del 2
 # Deletes the task with ID 2
 ```
 
+## Acknowledgments
+
+This project is inspired by the task tracker project outlined on [this roadmap](https://roadmap.sh/projects/task-tracker). The roadmap provides valuable insights and project ideas for new backend developers.
+
+Special thanks to the community for providing these resources!
+
+
 ## License
 
 ### MIT License
