@@ -4,7 +4,7 @@
   "description": "Basic cli to manage tasks, project from https://roadmap.sh/projects/task-tracker",
   "author": "devEddu17x",
   "private": false,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "dist/main.js",
   "bin": {
     "task": "dist/main.js"
